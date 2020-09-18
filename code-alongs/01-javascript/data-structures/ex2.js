@@ -25,15 +25,14 @@ let book4 = {
 }
 let bookList = [book1, book2, book3, book4]
 
-for (i = 0; i < bookList.length; i++) {
-    if (bookList[i].haveRead) {
-        console.log(`You already read "${bookList[i].title}" by ${bookList[i].author}`)
+for (let i = 0; i < bookList.length; i++) {
+    let currBook = bookList[i];
+    if (currBook.haveRead) {
+        console.log(`You already read "${currBook.title}" by ${currBook.author}`)
     } else {
-        console.log(`You still need to read "${bookList[i].title}" by ${bookList[i].author}`)
+        console.log(`You still need to read "${currBook.title}" by ${currBook.author}`)
     }
 }
-
-
 
 // ## The Movie Database
 // It's like IMDB, but much much smaller!
@@ -90,9 +89,9 @@ console.log(`The greater number of 6 and 6 is ${greaterNum(6, 6)}`)
 // outputs the result to the screen like so: "You are either 17 or 18"
 // - Call the function three times with different sets of values.
 function calculateAge(birthyear, currentYear) {
-    age1 = currentYear - birthyear - 1;
-    age2 = currentYear - birthyear;
-    console.log(`You are either ${age1} or ${age2}`)
+    let ageBeforeBirthDay = currentYear - birthyear - 1;
+    let age = currentYear - birthyear;
+    console.log(`You are either ${ageBeforeBirthDay} or ${age}`)
 }
 calculateAge(1989, 2020)
 calculateAge(1954, 2020)
@@ -129,7 +128,7 @@ console.log(helloWorld("xyc"))
 // Write a function named assignGrade that:
 // - takes 1 argument, a number score.
 // - returns a grade for the score, either "A", "B", "C", "D", or "F".
-// - Call that function for a few different scores and log the result to make sure it works.
+// - Call that function for a few different scores and log the result to make sure it works. 
 function assignGrade(score) {
     if (score > 90) {
         return "A"
