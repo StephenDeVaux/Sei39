@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+}
+
+body {
+    background-image: url("../images/pattern1.png");
+}
+
+header {
+    background: rgb(240, 119, 110);
+    height: 100px;
+}
+
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: 100;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin: 0;
+}
+
+h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+    font-family: 'Sacramento', cursive;
+    text-transform: capitalize;
+}
+
+header h2 {
+    padding-left: 10px;
+}
+
+.about h2 {
+    text-decoration: underline;
+}
+
+footer {
+    background: rgb(240, 119, 110);
+    margin: 0;
+    height: 50px;
+    text-align: right;
+    padding: 10px;
+    color: white;
+    font-size: 12px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hero {
+    width: 100%;
+    background: pink;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    vertical-align: middle;
+}
+
+.about {
+    background-color: white;
+    padding: 10px;
+}
+
+.about p {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.gridphotos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+}
+
+.gridphotos img {
+    width: 100%;
+    border: 3px solid rgb(204, 204, 204);
+}
+
+.test {
+    background: green;
+}
