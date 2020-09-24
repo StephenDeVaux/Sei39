@@ -62,7 +62,7 @@ footer {
     background: pink;
     margin-bottom: 0;
     padding-bottom: 0;
-    vertical-align: middle;
+    display: block;
 }
 
 .about {
