@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: url("https://images.unsplash.com/photo-1504417900752-5e508cb87268?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .tank {
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: inset 0 0 20px grey;
+            margin: 0 auto;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .spacer {
+            height: 30px;
+            width: 200px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        
+        .bowl {
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            display: grid;
+            align-items: center;
+            border-radius: 20% 20% 40% 40%;
+            box-shadow: inset 0 0 20px rgb(122, 122, 122);
+        }
+        
+        .bowl-inner {
+            height: 350px;
+            width: 350px;
+            margin: 0 auto;
+            background-color: palegoldenrod;
+            border-radius: 20% 20% 40% 40%;
+            box-shadow: inset 0 0 20px rgb(122, 122, 122);
+            transition: all ease-in 1s;
+        }
+        
+        .flusher {
+            height: 30px;
+            width: 60px;
+            background-color: white;
+            box-shadow: inset 0 0 3px rgb(122, 122, 122);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tank">
+        <div class="flusher"></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="bowl">
+        <div class="bowl-inner">
+            <div class="drain"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

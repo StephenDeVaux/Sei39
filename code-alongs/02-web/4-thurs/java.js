@@ -21,7 +21,7 @@ var thatArray = ["Facebook Platform", "Erlang Enthusiasts", "Ex-Girlfriends",
 function randomIdea() {
     let ideaIndex1 = Math.floor(Math.random() * thisArray.length)
     let ideaIndex2 = Math.floor(Math.random() * thatArray.length)
-    let idea = `A new random idea - ${thisArray[ideaIndex1]} ${thatArray[ideaIndex2]}`
+    let idea = `A new random idea - ${thisArray[ideaIndex1]} for ${thatArray[ideaIndex2]}`
     console.log(idea)
     return idea
 }
