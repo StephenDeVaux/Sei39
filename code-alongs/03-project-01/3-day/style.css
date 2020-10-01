@@ -1,0 +1,21 @@
+.box {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+button {
+    display: block;
+    margin: 20px;
+}
