@@ -30,4 +30,4 @@ if guess != secret_fruit
         guess = gets.chomp
     end
 end
-puts "Nice, that was my fruit!"
+puts "Nice, that was my fruit!"       

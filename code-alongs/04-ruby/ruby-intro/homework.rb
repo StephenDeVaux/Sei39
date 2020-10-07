@@ -1,3 +1,4 @@
+require "pry"
 ### 1. Create an array of the days of the week
 # - Create a variable named `days_of_the_week` as an array of the following:
 #     - Monday
@@ -31,3 +32,5 @@ puts "4. New array - #{new_array}"
 ### 5. Sort the remaining days alphabetically
 new_array = new_array.sort
 puts "5. New array - #{new_array}"
+
+binding.pry
