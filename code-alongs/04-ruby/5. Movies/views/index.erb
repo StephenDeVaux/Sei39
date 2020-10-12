@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <Style>
+    body, html {
+        height: 100%;
+    }
+    body {
+        background-image: url("https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1340&q=80");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1 { 
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+    }
+    label { 
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5rem; 
+        text-align: center; 
+        display: block; 
+        margin: 0 auto;
+    }
+    input { 
+        text-align: center; 
+        display: block; 
+        margin: 20px auto;
+        font-family: 'Roboto', sans-serif;
+    }
+    button { 
+        text-align: center; 
+        display: block; 
+        margin: 20px auto;
+        font-family: 'Roboto', sans-serif;
+        background: black; 
+        border-radius: 5px; 
+        color: white; 
+    }
+    p { 
+        text-align: center;
+    }
+    a { 
+        text-align: center;
+        background: white;
+        border-radius: 4px;
+        padding: 5px; 
+    }
+    </Style>
+</head>
+<body>
+    <p>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+     </p>
+    <h1>Welcome to the Movies App!</h1>
+
+    <form action="/info" method="get">
+        <label for="">What movie you want to know about</label>
+        <input type="text" name="title">
+        <button>Get Movie info</button>
+    </form>
+</body>
+</html>

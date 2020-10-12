@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a {
+        display: block;
+    }
+</style>
+<body>
+    <h1>Stock app</h1>
+
+    <p>Welcome to my stock app. Wish O bought more apple stocks 20 years ago....</p>
+
+        <a href="/stockprice?stock=aapl">Current Apple stockprice</a>
+    <a href="/stockprice?stock=tsla">Current Tesla stockprice</a>
+    <a href="/stockprice?stock=msft">Current Tesla stockprice</a>
+    <a href="/stockprice?stock=tbio">Current Translate stockprice</a>
+    <a href="/stockprice?stock=jpm">Current JPM stockprice</a>
+
+    <form action="/stockprice" method="get">
+    <label for="">ticker name</label>
+    <input type="text" name="stock">
+    <button>
+    Get stock detials</button>
+    </form>
+</body>
+</html>
