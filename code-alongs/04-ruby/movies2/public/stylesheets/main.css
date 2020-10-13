@@ -1,0 +1,72 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1511184150666-9bb7d41a88f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    text-align: center;
+}
+
+ol {
+    width: 70%;
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbtn {
+    text-align: center;
+    background: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+nav {
+    text-align: center;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+input {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    text-align: center;
+    display: block;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+    background: black;
+    border-radius: 5px;
+    color: white;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}

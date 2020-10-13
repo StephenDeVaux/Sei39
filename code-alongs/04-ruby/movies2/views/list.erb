@@ -1,0 +1,19 @@
+<h1>Movie list</h1>
+
+<h2><%= movies["totalResults"]%> Movies found</h2>
+
+<ol>
+    <% movies["Search"].each do |movie| %>
+    <% link = "/info?imdbid=#{movie["imdbID"]}" %>
+        <li>
+            <a href="<%= link %>"><%= movie["Title"] %></a> 
+        </li>
+     <% end %>
+</ol>
+
+<% max_pages = (movies["totalResults"].to_f / 10 ).ceil %>
+<p>Go to Page - 
+<% 1.upto max_pages do |n| %>
+    <a href="<%= "/list?search=#{search}&page=#{n}" %> "> <%= n%> </a>
+<% end %>
+</p>
