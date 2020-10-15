@@ -1,0 +1,53 @@
+<h1>Planets</h1>
+
+<h2>These are the planets currently in your Database</h2>
+<table>
+    <tr>
+        <th>Planet</th>
+        <th>Diamter (km)</th>
+        <th>Mass (kg)</th>
+        <th>Moons</th>
+        <th>Pic</th>
+    </tr>
+<% planets.each do |planet| %>
+    <tr>
+        <td><%= planet["name"] %> </td>
+        <td><%= planet["diameter"] %> </td>
+        <td><%= planet["mass"] %> </td>
+        <td><%= planet["moon_count"] %> </td>
+        <td>
+        <img src="<%= planet["image_url"] %>" alt="">
+        </td>
+    </tr>
+<% end %>
+</table>
+
+<h2>Add a Planet:</h2>
+<form action="/addplanet" method="post">
+    <div>
+        <label for="">Name </label>
+        <input type="text" name="name">
+    </div>
+        <label for="">Diamter </label>
+        <input type="text" name="diameter">
+    <div>
+        <label for="">Mass </label>
+        <input type="text" name='mass'>
+    </div>
+        <label for="">Number of mooons </label>
+        <input type="text" name="moon_count">
+    <div>
+        <label for="">Image URL </label>
+        <input type="text" name="image_url">
+    </div>
+    <button>Add Planet</button>
+</form>
+
+<h2>Delete a planet</h2>
+<form action="/deleteplanet" method="post">
+    <div>
+        <label for="">Planet </label>
+        <input type="text" name="name">
+    </div>
+    <button>Delete</button>
+</form>

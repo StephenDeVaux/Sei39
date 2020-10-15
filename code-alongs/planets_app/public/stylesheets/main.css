@@ -1,0 +1,21 @@
+label {
+    margin-left: 50px;
+    display: inline-block;
+    width: 150px;
+}
+
+button {
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+table,
+tr {
+    border: 1px solid black;
+    text-align: center;
+}
+
+img {
+    display: inline-block;
+    width: 100px;
+}
