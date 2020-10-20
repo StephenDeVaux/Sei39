@@ -16,38 +16,11 @@
         <td><%= planet["mass"] %> </td>
         <td><%= planet["moon_count"] %> </td>
         <td>
-        <img src="<%= planet["image_url"] %>" alt="">
+            <img src="<%= planet["image_url"] %>" alt="">
+        </td>
+        <td>
+            <a href="/planet/<%= planet["id"] %>">Details</a>
         </td>
     </tr>
 <% end %>
 </table>
-
-<h2>Add a Planet:</h2>
-<form action="/addplanet" method="post">
-    <div>
-        <label for="">Name </label>
-        <input type="text" name="name">
-    </div>
-        <label for="">Diamter </label>
-        <input type="text" name="diameter">
-    <div>
-        <label for="">Mass </label>
-        <input type="text" name='mass'>
-    </div>
-        <label for="">Number of mooons </label>
-        <input type="text" name="moon_count">
-    <div>
-        <label for="">Image URL </label>
-        <input type="text" name="image_url">
-    </div>
-    <button>Add Planet</button>
-</form>
-
-<h2>Delete a planet</h2>
-<form action="/deleteplanet" method="post">
-    <div>
-        <label for="">Planet </label>
-        <input type="text" name="name">
-    </div>
-    <button>Delete</button>
-</form>

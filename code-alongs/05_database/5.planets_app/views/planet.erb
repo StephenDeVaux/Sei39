@@ -1,0 +1,16 @@
+<h1>Planet Details</h1>
+
+<p>Name - <%= planet["name"] %></p>
+<p>Diameter - <%= planet["diameter"] %> km</p>
+<p>Mass - <%= planet["mass"] %> kg</p>
+<p>Moons - <%= planet["moon_count"] %></p>
+<img src="<%= planet["image_url"] %>" alt="">
+
+<form action="/planet/<%= planet["id"] %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete</button>
+</form>
+
+<form action="/planet/<%= planet["id"] %>/edit" method="get">
+    <button>Update</button>
+</form>

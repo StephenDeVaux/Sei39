@@ -9,8 +9,14 @@
 <body>
 
 <a href="/">Home</a>
-<a href="/upload">Add dish</a>
-<a href="/delete">Delete dish</a>
+<a href="/dishes/new">Add dish</a>
+<p> login id = 
+<%= session[:user_id] %>
+</p>
+<form action="/logout" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Logout</button>
+</form>
 
   <%= yield %>
 

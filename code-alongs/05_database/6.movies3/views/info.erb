@@ -1,0 +1,13 @@
+<body>
+    <h1>Here's your movie info</h1>
+    <p><span>Where did I get your information from : </span> <%= source %></p>
+    <p><span>Title : </span> <%= movie["Title"] %></p>
+    <p><span>Year released : </span> <%= movie["Year"] %></p>
+    <p><span>How long is it : </span> <%= movie["Runtime"] %></p>
+    <p><span>Whats it about : </span> <%= movie["Plot"] %></p>
+    <p><span>It has these awards :</span> <%= movie["Awards"] %></p>
+    <p><span>IMBD Rating : </span> <%= movie["imdbRating"] %> (<%= movie["imdbVotes"] %> Votes )</p>
+    <p><span>It has these awards : </span> <%= movie["Awards"] %></p>
+    <img src="<%= movie["Poster"] %>" alt="">
+</body>
+
