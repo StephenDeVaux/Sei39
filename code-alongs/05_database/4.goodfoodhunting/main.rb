@@ -1,43 +1,61 @@
-     
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' # only reloads the main.rb file....
+also_reload 'db/data_access'
 require 'pg'
 require_relative 'db/data_access.rb'
 require 'bcrypt'
 enable :sessions # global variabls named session - which is just a hash
 
+def logged_in?
+  if session[:user_id]
+    true
+  else
+    false
+  end
+end
+
+def current_user
+  find_user_by_id(session[:user_id])
+end
+
 get '/' do
-  dishes = run_sql("SELECT * FROM dishes;")
+  redirect '/login' unless logged_in?
+  dishes = all_dishes
   erb :index, locals: { dishes: dishes }
 end
 
-get '/dishes/new' do 
+get '/dishes/new' do
   erb :add
 end
 
 get '/dishes/:id' do
-  dish = run_sql("SELECT * FROM dishes WHERE id = '#{params["id"]}';")
-  erb :details, locals: { dish: dish[0]}
+  redirect '/login' unless logged_in?
+  dish = find_dish_by_id(params['id'])
+  erb :details, locals: { dish: dish }
 end
 
-post '/dishes' do 
-  dish = run_sql("INSERT INTO dishes(name, image_url) VALUES('#{params['name']}', '#{params['image_url']}');")
-  redirect "/"
+post '/dishes' do
+  redirect '/login' unless logged_in?
+  add_dish(params['name'], params['image_url'], session[:user_id])
+  redirect '/'
 end
 
-delete '/dishes' do 
-  run_sql("DELETE FROM dishes WHERE id = '#{params["id"]}';")
-  redirect "/"
+delete '/dishes' do
+  redirect '/login' unless logged_in?
+  delete_dish(params['id'])
+  redirect '/'
 end
 
-get '/dishes/:id/edit' do 
-  dish = run_sql("SELECT * FROM dishes WHERE id = '#{params["id"]}';")
+get '/dishes/:id/edit' do
+  redirect '/login' unless logged_in?
+  dish = run_sql("SELECT * FROM dishes WHERE id = '#{params['id']}';")
   erb :edit, locals: { dish: dish[0] }
 end
 
 patch '/dishes/:id' do
-  dish = run_sql("UPDATE dishes SET name = '#{params["name"]}', image_url = '#{params["image_url"]}' where id ='#{params["id"]}';")
-  redirect "/dishes/#{params["id"]}"
+  redirect '/login' unless logged_in?
+  edit_dish(params['id'], params['name'], params['image_url'])
+  redirect "/dishes/#{params['id']}"
 end
 
 get '/login' do
@@ -45,22 +63,17 @@ get '/login' do
 end
 
 post '/login' do
-  login_password = params["password"]
-  login_success = false
-
-  user = run_sql("SELECT * FROM users WHERE email = '#{params["email"]}';")
-
-  password_object = BCrypt::Password.new(user[0]["password_digest"])
-
+  user = find_user_by_email(params['email'])
   # syntatic sugar this double equals! its actually just a function
-  login_success = password_object==login_password
-
-  if login_success 
-    session[:user_id]=user[0]['id']
-    # session[:user_id]
+  if BCrypt::Password.new(user['password_digest']) == params['password']
+    session[:user_id] = user['id']
     redirect '/'
   else
-    "failed to login"
+    'failed to login'
   end
 end
 
+delete '/logout' do
+  session[:user_id] = nil
+  redirect '/login'
+end

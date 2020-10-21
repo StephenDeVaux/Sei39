@@ -9,3 +9,5 @@
 </form>
 
 <a href="/dishes/<%= dish["id"] %>/edit">Update</a>
+
+<h3>Dish added by <%= find_user_by_id(dish["user_id"])["email"] %></h3>

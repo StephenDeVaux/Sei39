@@ -5,3 +5,15 @@ body {
 img {
     height: 200px;
 }
+
+.navbar {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar-item {
+    display: inline-block;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
