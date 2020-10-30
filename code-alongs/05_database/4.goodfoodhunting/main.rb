@@ -31,7 +31,8 @@ end
 get '/dishes/:id' do
   redirect '/login' unless logged_in?
   dish = find_dish_by_id(params['id'])
-  erb :details, locals: { dish: dish }
+  comments = find_comments_by_dish(params['id'])
+  erb :details, locals: { dish: dish, user: current_user, comments: comments }
 end
 
 post '/dishes' do
@@ -74,6 +75,19 @@ post '/login' do
 end
 
 delete '/logout' do
+  redirect '/login' unless logged_in?
   session[:user_id] = nil
   redirect '/login'
+end
+
+post '/comment' do 
+  redirect '/login' unless logged_in?
+  create_comment(params['content'], session[:user_id], params["dish_id"])
+  redirect "/dishes/#{params["dish_id"]}"
+end
+
+delete '/comment' do
+  redirect '/login' unless logged_in?
+  delete_comment_by_id(params["id"])
+  redirect "/dishes/#{params["dish_id"]}"
 end

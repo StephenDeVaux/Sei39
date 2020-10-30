@@ -12,7 +12,7 @@
   <div class="navbar">
     <a href="/">Home</a>
     <a href="/dishes/new">Add dish</a>
-    <p class="navbar-item"> Logged in : <%= current_user["email"] %>
+    <p class="navbar-item"> Logged in : <%=  current_user["email"] %>
     </p>
     <form class="navbar-item" action="/logout" method="post">
       <input type="hidden" name="_method" value="delete">

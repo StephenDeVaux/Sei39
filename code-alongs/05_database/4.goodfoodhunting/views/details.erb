@@ -11,3 +11,26 @@
 <a href="/dishes/<%= dish["id"] %>/edit">Update</a>
 
 <h3>Dish added by <%= find_user_by_id(dish["user_id"])["email"] %></h3>
+
+<h2>Comments</h2>
+<form action="/comment" method="post">
+    <input type="hidden" name="dish_id" value="<%= dish["id"] %>">
+    <textarea name="content"></textarea>
+    <button>Add Comment</button>
+</form>
+
+<ul>
+    <% comments.each do |comment| %>
+        <li>
+        <%= comment["content"]%> - <%= find_user_by_id(comment["user_id"])["email"]%>
+        <% if comment["user_id"] == user["id"] %>
+            <form style="display: inline-block;" action="/comment" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="dish_id" value="<%= dish["id"] %>">
+                <input type="hidden" name="id" value="<%= comment["id"] %>">
+                <button>X</button>
+            </form>
+        <% end %>
+        </li> 
+    <% end%>
+</ul>

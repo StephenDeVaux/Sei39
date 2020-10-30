@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            font-size: 1.5rem;
+            border: none;
+            background-color: darkgrey;
+            border-radius: 10px;
+            width: 150px;
+            height: 50px;
+        }
+        
+        img {
+            position: absolute;
+            width: 40%;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* img {
+            display: block;
+            width: 40%;
+            margin: 0 auto;
+            -webkit-transition: background-image 0.2s ease-in-out;
+            transition: background-image 0.2s ease-in-out;
+        } */
+        
+        div {
+            position: relative;
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Flip it</button>
+    <div>
+        <img class="head" src="https://cdn11.bigcommerce.com/s-u3kh6nrsu2/images/stencil/1280x1280/products/11066/27469/2020-2-Unc-Tooth-Fairy_REV1__17139.1580266622.jpg?c=2?imbypass=on" alt="">
+        <img class="tail" src="https://www.aussiecoinsandnotes.com/assets/full/4891.jpg?20200707031245" alt="">
+    </div>
+    <script src="decider.js"></script>
+</body>
+
+</html>
