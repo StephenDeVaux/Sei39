@@ -1,0 +1,20 @@
+{
+    "dependencies": {
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "lodash": "^4.17.20"
+    },
+    "name": "emergency_cmplement",
+    "version": "1.0.0",
+    "main": "emergency_compliment.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon emergency_compliment.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "nodemon": "^2.0.6"
+    }
+}
