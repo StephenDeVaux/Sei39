@@ -15,6 +15,7 @@ colors = ["#FFBF00", "#0080FF", "#01DF3A", "#FF0080"]
 
 app.set('view engine', 'ejs')
 app.set('views', './views')
+
 app.get('/', (req, res) => {
     res.render('index', { compliment: _.sample(compliments), color: _.sample(colors), name: null })
 })
