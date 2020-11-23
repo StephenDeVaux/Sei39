@@ -4,9 +4,7 @@ class Slider extends Component {
 
     constructor (props) {
         super(props)
-
         this.handleChange = this.handleChange.bind(this) //This is to make the this in handleclick work.... what a mess! 
-
         this.state = {
             val: 5
         }

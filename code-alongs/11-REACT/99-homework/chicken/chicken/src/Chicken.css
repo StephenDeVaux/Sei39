@@ -1,0 +1,21 @@
+.box { 
+    border: 1px solid grey ;
+    width: 250px; 
+    margin: 20px auto;
+}
+
+.chicken-btn{
+    display: inline-block;
+    border: 1px solid grey ;
+    background: white;
+    margin: 5px;
+}
+
+.text{
+    display: inline-block;
+    margin: auto
+}
+.text-chicken{
+    display: inline-block;
+    margin: 7px 30px 7px 7px;
+}
