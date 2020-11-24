@@ -1,0 +1,28 @@
+.tweet-box { 
+    max-width: 500px; 
+    padding: 10px;
+}
+
+.tweet-box textarea { 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tweet-box section { 
+    display: flex;
+    justify-content: space-between;
+}
+
+.tweet-box .warning { 
+    background-color: mistyrose;
+}
+
+
+.tweet-box .bar {
+    background-color: orange; 
+    border-radius: 2px;
+    height: 5px;
+    margin: 0 0 5px auto;
+    width: 50%;
+    transition: all 300ms ease-out;
+}

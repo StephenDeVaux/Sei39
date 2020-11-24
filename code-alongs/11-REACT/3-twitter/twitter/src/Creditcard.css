@@ -1,0 +1,10 @@
+.credit-card { 
+    width: 300px;
+    margin: 20px auto;
+}
+
+.credit-card input { 
+    width: 300px;
+    box-sizing: border-box;
+}
+
