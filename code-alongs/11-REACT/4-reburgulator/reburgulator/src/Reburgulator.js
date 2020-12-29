@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import React from 'react'
 import Burger from './Burger.js'
+import Menu from './Menu.js'
+import getCheeseyName from './cheesylabel.js'
 
 class Reburgulator extends Component {
     state = {
@@ -22,6 +24,12 @@ class Reburgulator extends Component {
         })
     }
 
+    clearAll = () => { 
+        this.setState({
+            ingredients: []
+        })
+    }
+    
     render() {
         const { ingredients } = this.state
         return (
@@ -30,12 +38,9 @@ class Reburgulator extends Component {
                 {/* {React.createElement('div', null, 'hello')}
                 {React.createElement('div', null, this.state.itemsRe)}
                 {React.createElement('div', null, this.state.items.map(item => <p>{item}</p>) )} */}
-                <aside>
-                    <h2>menu</h2>
-                </aside>
-                <button onClick={() => this.add("tomato")}>Tomato</button>
-                <button onClick={() => this.add("cheese")}>Cheese</button>
-                <button onClick={() => this.add("buns")}>Buns</button>
+                <Menu 
+                    onAdd={this.add}
+                    onClear={this.clearAll}/>
                 <section>
                     <h2>burger</h2>
                     <Burger 
@@ -43,6 +48,10 @@ class Reburgulator extends Component {
                         onRemove={this.remove} />
                     {/* <div>{ingredients.map(this.renderIngredient)}</div> */}
                 </section>
+                <aside>
+                    { getCheeseyName(ingredients) }
+                </aside>
+
             </div>
         )
     }

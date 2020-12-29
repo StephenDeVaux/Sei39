@@ -3,8 +3,13 @@
 //
 import './Burger.css'
 import Ingredient from "./Ingredient.js"
+import {useContext} from 'react'
+import {BurgerContext} from './BurgerContext'
 
-export default function Burger({ ingredients, onRemove}) {
+export default function Burger() {
+
+    const { ingredients } = useContext(BurgerContext)
+
     return (
         <div>
             { ingredients.map((ingredient, idx) =>

@@ -1,0 +1,33 @@
+.tomato { 
+    background-color: tomato;
+    width: 300px; 
+    border-radius: 3px;
+    margin: 0 auto;
+    height: 30px;
+}
+
+.cheese  { 
+    background-color: gold;
+    width: 350px; 
+    border-radius: 3px;
+    margin: 0 auto;
+    height: 15px;
+
+}
+
+.buns { 
+    background-color: wheat;
+    width: 400px; 
+    border-radius: 40px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.patty { 
+    background-color: brown;
+    width: 300px; 
+    border-radius: 50px;
+    margin: 0 auto;
+    height: 40px;
+}
+
